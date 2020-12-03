@@ -212,8 +212,8 @@ pub fn prepend_to_path(path: impl Display, base_path: impl Display) -> String {
 }
 
 pub fn command_path(name: &str) -> bossy::Result<bossy::Output> {
-    bossy::Command::impure("command")
-        .with_args(&["-v", name])
+    bossy::Command::impure("which")
+        .with_arg(name)
         .run_and_wait_for_output()
 }
 
